@@ -1,0 +1,36 @@
+<html>
+  <head>
+  	<title>zParse example page</title>
+  	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+  	<script type="text/javascript" src="zParse.js"></script>
+  	<script type="text/javascript">
+  	$(document).ready(function(){
+  		var parser = zParse;
+  		var test_text = $("#test_block").html();
+  		$("#test_block").html(parser.BBCodeToHtml(test_text));
+  	});
+  	</script>
+  </head>
+  <body>
+  	<div id="test_block">
+  		[b]This is bold text[/b]
+  		[i]This is itallic[/i] 
+  		[quote]This is some famous quote[/quote]
+  		[code]
+  		This is some code which I don't want to be [b]FORMATTED[/b]
+  			I can add as much code as I want:
+  			#include <stdio.h>
+
+  			int main()
+  			{
+  				printf("Hello world!\n");
+  				return 0;
+  			}
+  		[/code]
+  		[url]http://some_url.com[/url]
+  		[url=http://some_url.com]Some other URL[/url]
+  		[youtube]QH2-TGUlwu4[/youtube]
+  	</div>
+  </body>
+</html>
